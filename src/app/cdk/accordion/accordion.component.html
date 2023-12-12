@@ -1,0 +1,81 @@
+<section class="actions">
+  <button class="btn btn-primary" (click)="accordion.openAll()">
+    Abrir todos
+  </button>
+  <button class="btn btn-secondary" (click)="accordion.closeAll()">
+    Cerrar todos
+  </button>
+</section>
+
+<cdk-accordion
+  #accordion="cdkAccordion"
+  [multi]="true"
+  class="example-accordion"
+>
+  @for (item of items; track item; let index = $index) {
+  <cdk-accordion-item
+    #accordionItem="cdkAccordionItem"
+    class="example-accordion-item"
+    role="button"
+    tabindex="0"
+    [attr.id]="'accordion-header-' + index"
+    [attr.aria-expanded]="accordionItem.expanded"
+    [attr.aria-controls]="'accordion-body-' + index"
+    (keyup.enter)="accordionItem.toggle()"
+    (keydown)="navigate($event, index)"
+  >
+    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+      {{ item }}
+      <span class="example-accordion-item-description">
+        Click to {{ accordionItem.expanded ? "close" : "open" }}
+      </span>
+    </div>
+    <div
+      class="example-accordion-item-body"
+      role="region"
+      [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + index"
+      [attr.aria-labelledby]="'accordion-header-' + index"
+    >
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+      excepturi incidunt ipsum deleniti labore, tempore non nam doloribus
+      blanditiis veritatis illo autem iure aliquid ullam rem tenetur deserunt
+      velit culpa?
+    </div>
+  </cdk-accordion-item>
+  }
+</cdk-accordion>
+
+<br />
+<hr />
+
+<section>
+  <h1>Accordion</h1>
+  <p>
+    Tenemos dos componentes que forman nuestro CDK accordion.
+    <strong>CdkAccordionItem</strong> y <strong>CdkAccordion</strong>. Siendo el
+    cdkAccordion el que engloba a los cdkAccordionItem.
+  </p>
+  <p>el CdkAccordion tiene dos metodos importantes.</p>
+  <ul>
+    <li>closeAll()</li>
+    <li>openAll()</li>
+  </ul>
+  <p>
+    Podemos llamar a éste metodo directamente desde la referencia del componente
+    en el HTML, o creándonos en nuestro archivo de typescritpt a través de
+    <code>&#64;ViewChild</code>
+  </p>
+  <p>
+    Tiene dos propiedades (id y multi), siendo <strong>multi</strong> la
+    encargada de permitir que el cdkAccordion tenga varios cdkAccordionItem
+    abiertos a la vez.
+  </p>
+  <hr />
+  <p>El cdkAccordionItem consta de tres metodos.</p>
+  <ul>
+    <li>close()</li>
+    <li>open()</li>
+    <li>toggle()</li>
+  </ul>
+</section>

@@ -1,0 +1,21 @@
+<h1>Hola {{ data.name || "desconocido" }}</h1>
+
+<label id="favorite-animal">¿Cuál es tu animal favorito?</label>
+<input
+  for="favorite-animal"
+  [(ngModel)]="data.animal"
+  placeholder="Escriba su animal"
+/>
+
+<div>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    (click)="dialogRef.close(data.animal)"
+  >
+    Ok
+  </button>
+  <button class="btn btn-secondary" (click)="dialogRef.close()">
+    Cancelar
+  </button>
+</div>

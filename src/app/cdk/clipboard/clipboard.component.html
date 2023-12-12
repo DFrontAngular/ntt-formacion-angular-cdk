@@ -1,0 +1,59 @@
+<section>
+  <div>
+    <label for="clipboard-example-textarea"
+      >Copiar al portapapeles usando la directiva
+      <code>cdkCopyToClipboard</code>
+    </label>
+    <textarea
+      id="clipboard-example-textarea"
+      cols="30"
+      rows="10"
+      [(ngModel)]="value"
+    ></textarea>
+    <button class="btn btn-primary" [cdkCopyToClipboard]="value">
+      Copiar al portapapeles
+    </button>
+  </div>
+
+  <div>
+    <label for="clipboard-example-textarea">Pega tu contenido aquí </label>
+    <textarea id="clipboard-example-textarea" cols="30" rows="10"></textarea>
+  </div>
+</section>
+
+<hr style="margin: 40px 0" />
+
+<section>
+  <label for="clipboard-example-textarea"
+    >Copiar al portapapeles usando el metodo <code>copy</code> del servicio
+    <code>Clipboard</code>
+  </label>
+  <textarea
+    id="clipboard-example-textarea"
+    cols="30"
+    rows="10"
+    [(ngModel)]="valueService"
+  ></textarea>
+  <button class="btn btn-secondary" (click)="copyClipboard(valueService)">
+    Copiar al portapapeles
+  </button>
+
+  <hr />
+
+  <label for="clipboard-example-textarea">Pega tu contenido aquí </label>
+  <textarea id="clipboard-example-textarea" cols="30" rows="10"></textarea>
+</section>
+
+<section>
+  <h1>Clipboard</h1>
+  <p>
+    La directiva <code>cdkCopyToClipboard</code> es muy sencilla de usar.
+    Simplemente tenemos que pasarle el texto a copiar en
+    <code>[cdkCopyToClipboard]</code>.
+  </p>
+  <p>
+    Aunque tambien podemos realizar el copy desde el servicio
+    <i>Clipboard</i> injectado en el componente, en caso que necesitemos lógica
+    intermedia antes de copiar.
+  </p>
+</section>

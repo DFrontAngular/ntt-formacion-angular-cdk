@@ -1,0 +1,65 @@
+<button [cdkMenuTriggerFor]="menu" class="btn btn-primary">Abrir menu</button>
+
+<ng-template #menu>
+  <div class="example-menu" cdkMenu>
+    <button class="example-menu-item" cdkMenuItem>Refresh</button>
+    <button class="example-menu-item" cdkMenuItem>Settings</button>
+    <button class="example-menu-item" cdkMenuItem>Help</button>
+    <button class="example-menu-item" cdkMenuItem>Sign out</button>
+  </div>
+</ng-template>
+
+<br />
+<br />
+
+<hr />
+
+<section>
+  <h1>Menu</h1>
+  <p>
+    Muy importante
+    <span style="color: red">
+      &#64;import '&#64;angular/cdk/overlay-prebuilt.css';</span
+    >
+    en el styles.scss de nuestro proyecto para que el overlay funcione
+  </p>
+  <p>
+    El <code> &#64;angular/cdk/menu</code> nos ayuda a crear menus
+    personalizables con interacciones badadas en
+    <a
+      href="https://www.w3.org/TR/wai-aria-1.1/"
+      title="https://www.w3.org/TR/wai-aria-1.1/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      la especificación de WAI ARIA.</a
+    >
+  </p>
+  <p>
+    El menú <code>&#64;angular/cdk/</code> está diseñado para ser altamente
+    personalizable según sus necesidades. Por lo que gracias a todas las
+    directivas que tiene se pueden aplicar las clases de CSS correspondiente a
+    cada elemento de html.
+  </p>
+  <ul>
+    <li>
+      <strong>Directiva:</strong> cdkMenu; <strong>CSS class:</strong> .cdk-menu
+    </li>
+    <li>
+      <strong>Directiva:</strong> cdkMenuBar;
+      <strong>CSS class:</strong> .cdk-menu-bar
+    </li>
+    <li>
+      <strong>Directiva:</strong> cdkMenuItem;
+      <strong>CSS class:</strong> .cdk-menu-item
+    </li>
+    <li>
+      <strong>Directiva:</strong> cdkMenuItemRadio;
+      <strong>CSS class:</strong> .cdk-menu-item-radio
+    </li>
+    <li>
+      <strong>Directiva:</strong> cdkMenuTriggerFor;
+      <strong>CSS class:</strong> cdk-menu-trigger
+    </li>
+  </ul>
+</section>

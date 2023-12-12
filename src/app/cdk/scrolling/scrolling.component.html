@@ -1,0 +1,50 @@
+<!-- appendOnly  -->
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <p *cdkVirtualFor="let item of items; let count = count" class="example-item">
+    {{ item }} / {{ count }}
+  </p>
+</cdk-virtual-scroll-viewport>
+
+<hr />
+
+<section>
+  <h1>Virtual scrolling</h1>
+  <p>
+    El Virtual Scrolling es una herramienta muy potente del CDK, y su
+    importancia radica en mejorar el rendimiento de las aplicaciones web que
+    trabajan con grandes conjuntos de datos. Su uso nos aporta muchas ventajas,
+    como podemos ver a continuación.
+  </p>
+  <ul>
+    <li>Eficiencia en el rendimiento</li>
+    <li>Manejo de grandes conjuntos de datos</li>
+    <li>Ahorro de recursos</li>
+    <li>Experiencia de usuario mejorada</li>
+    <li>Optimización del tiempo de carga inicial</li>
+  </ul>
+  <p>
+    Se trata de un módulo fácil de usar, pero si sabemos aplicarlo en el
+    contexto adecuado, la calidad de nuestra aplicación mejora de una forma
+    importante.
+  </p>
+
+  <p>
+    Cuando aplicamos la directiva: <code>*cdkVirtualFor </code>, al igual que
+    ocurre con un *ngFor, nos permite trabajar con las siguientes variables en
+    el template
+  </p>
+  <ul>
+    <li>index</li>
+    <li>count</li>
+    <li>first</li>
+    <li>last</li>
+    <li>odd</li>
+    <li>even</li>
+  </ul>
+  <p>
+    Si aplicamos la directiva <code>appendOnly</code> al
+    cdk-virtual-scroll-viewport, se mantiene en el DOM los elementos que ya han
+    sido renderizados. Hay que tener cuidado porque afectará mucho al
+    rendimiento.
+  </p>
+</section>

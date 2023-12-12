@@ -1,0 +1,61 @@
+<div class="container">
+  <ol>
+    <li>
+      <label id="dialog-user-name">¿Cómo te llamas?</label>
+      <input for="dialog-user-name" [(ngModel)]="name" />
+    </li>
+    <li>
+      <button class="btn btn-primary" (click)="openDialog()">
+        Abrir modal
+      </button>
+    </li>
+    @if (animal) {
+    <li>
+      Elegiste: <em>{{ animal }}</em>
+    </li>
+    } @else {
+    <li>No elegiste ningún animal.</li>
+    }
+  </ol>
+
+  <section>
+    <h1>Dialog</h1>
+
+    <p>
+      Muy importante
+      <span style="color: red">
+        &#64;import '&#64;angular/cdk/overlay-prebuilt.css';</span
+      >
+      en el styles.scss de nuestro proyecto para que el overlay funcione
+    </p>
+
+    <p>
+      El dialog es una de las herramientas más potentes que ofrece el CDK.
+      Proporciona una forma eficaz de implementar ventanas modales y cuadros de
+      diálogo en las aplicaciones Angular.
+    </p>
+
+    <ul>
+      <li>Manejo de Estado y Datos</li>
+      <li>Animaciones Integradas</li>
+      <li>Personalización de Estilos</li>
+      <li>Control de Accesibilidad</li>
+      <li>Gestión del Enfoque</li>
+      <li>Integración con Angular Forms</li>
+      <li>Compatibilidad con Diferentes Dispositivos</li>
+      <li>Gestión de Múltiples Cuadros de Diálogo</li>
+    </ul>
+
+    <p>
+      Podemos habrir los dialog a través del metodo <code>open()</code>, y
+      pasandole nuestro componente, o una <code>TemplateRef</code>, además de
+      una serie de configuraciones, datos para el dialog, clases de css.
+    </p>
+
+    <p>
+      El componente Dialog es muy completo y tiene gran cantidad de métodos y
+      configuraciones, por lo que te animo a que visites la documentación para
+      sacarle el máximo partido.
+    </p>
+  </section>
+</div>

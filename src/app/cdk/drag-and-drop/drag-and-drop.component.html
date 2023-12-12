@@ -1,0 +1,62 @@
+<div class="flex" cdkDropListGroup>
+  <div class="example-container">
+    <h2>To do</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of todo; track item) {
+
+      <div
+        class="example-box"
+        cdkDrag
+        [cdkDragDisabled]="item === 'Get to work'"
+      >
+        {{ item }}
+      </div>
+      }@empty {
+      <div>No hay más items</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of done; track item) {
+      <div class="example-box" cdkDrag>{{ item }}</div>
+      }@empty {
+      <div>No hay más items</div>
+      }
+    </div>
+  </div>
+</div>
+
+{{ todo }}
+
+<section>
+  <h1>Drag-drop</h1>
+  <p>
+    Proporciona funcionalidades avanzadas para implementar operaciones de
+    arrastrar y soltar (drag-and-drop) en las aplicaciones Angular. Aquí hay
+    algunas ventajas clave del sistema de arrastrar y soltar del CDK
+  </p>
+
+  <ul>
+    <li>Fácil Implementación</li>
+    <li>Personalización Avanzada</li>
+    <li>Gestión de Lista de Elementos</li>
+    <li>Soporte para Múltiples Listas</li>
+    <li>Compatibilidad con Dispositivos Táctiles</li>
+    <li>Gestión de Estados y Eventos</li>
+  </ul>
+</section>

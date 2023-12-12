@@ -1,0 +1,70 @@
+<table cdk-table [dataSource]="dataSource">
+  <!-- Position Column -->
+  <ng-container cdkColumnDef="position">
+    <th cdk-header-cell *cdkHeaderCellDef>No.</th>
+    <td cdk-cell *cdkCellDef="let element">{{ element.position }}</td>
+    <td cdk-footer-cell *cdkFooterCellDef>No.</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef>Name</th>
+    <td cdk-cell *cdkCellDef="let element">
+      {{ element.name }}
+    </td>
+    <td cdk-footer-cell *cdkFooterCellDef>Name</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container cdkColumnDef="weight">
+    <th cdk-header-cell *cdkHeaderCellDef>Weight</th>
+    <td cdk-cell *cdkCellDef="let element">{{ element.weight }}</td>
+    <td cdk-footer-cell *cdkFooterCellDef>Weight</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container cdkColumnDef="symbol">
+    <th cdk-header-cell *cdkHeaderCellDef>Symbol</th>
+    <td cdk-cell *cdkCellDef="let element">{{ element.symbol }}</td>
+    <td cdk-footer-cell *cdkFooterCellDef>Symbol</td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr
+    cdk-row
+    *cdkRowDef="let row; columns: displayedColumns"
+    (click)="handleRowClick(row)"
+  ></tr>
+  <tr cdk-footer-row *cdkFooterRowDef="displayedColumns"></tr>
+</table>
+
+<br />
+<hr />
+
+<section>
+  <h1>Table</h1>
+  <p>
+    El modulo de CdkTable nos proporciona un data-table totalmente
+    personalizable, con columnas dinámicas y una estructura del DOM accesible.
+    La tabla proporciona una base sobre la que se pueden construir otras
+    funciones, como la ordenación y paginación.
+  </p>
+
+  <p>
+    El primer paso para la creación de nuestra tabla es definir los templates
+    del header-row
+    <code>(cdkHeaderRowDef)</code>,data-row <code>(cdkRowDef)</code> y el
+    footer-row <code>(cdkFooterRowDef)</code>, siendo todos ellos opcionales.
+  </p>
+  <p>
+    El siguiente paso es definir las filas de la tabla. header-row
+    <code>(cdkHeaderRowDef)</code>, data-row <code> (cdkRowDef),</code> y
+    footer-row <code>(cdkFooterRowDef)</code>
+  </p>
+  <p>
+    El estilizado de las columnas es muy sencillo, ya que cada fila y celda se
+    le proveerá con una clase de css que incluye el nombre de su columna, por
+    ejemplo: cdk-column-weight, además de las clases <strong>cdk-row</strong> (a
+    cada th) y <strong> cdk-cell</strong> (a cada td), etc.
+  </p>
+</section>

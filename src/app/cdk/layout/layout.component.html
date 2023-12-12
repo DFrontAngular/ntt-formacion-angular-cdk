@@ -1,0 +1,29 @@
+<p>
+  Cambie el tamaño de la ventana de su navegador para ver el cambio de tamaño de
+  pantalla actual.
+</p>
+<p>
+  El tamaño de pantalla actual es <strong>{{ currentScreenSize }}</strong>
+</p>
+
+<p style="color: red" *ngIf="currentScreenSize === 'Medium'">
+  Me muestro si soy Medium
+</p>
+
+<section>
+  <h1>Layout</h1>
+  <p>
+    El módulo de Laout proporciona utilidades para crear interfaces de usuario
+    responsivas que reaccionan a los cambios en el tamaño de la pantalla.
+  </p>
+  <p>
+    Muy útil para cuando se necesitan dos diseños totalmente distintos para
+    escritorio/móvil que a través de CSS no serian posibles.
+  </p>
+  <p>
+    Una ventaja muy importante, ya que no tendriamos que estar ocultando
+    componentes con display none, o similar. Sino que gracias al
+    <code>Layout</code>, los componentes no se pintarían en el HTML, aumentando
+    asi el rendimiento de nuestra aplicación.
+  </p>
+</section>

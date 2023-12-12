@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+li {
+  padding: 10px 0;
+
+  input,
+  button {
+    margin-left: 20px;
+  }
+}
